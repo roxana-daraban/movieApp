@@ -4,15 +4,23 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 const Card=({title})=>{
+  const [hasLiked, setHasLiked] = useState(false);
+  
   return(
-    <div>
+    <div className="card">
     <h2>{title}</h2>
+
+    <button onClick={()=> setHasLiked(true)}>
+      Like</button>
+
     </div>
 
   )
 }
 
-const App=()=>{  
+const App=()=>{ 
+  
+
   return (
   <div className="card-container">
     <h2>Functional Arrow Component</h2>
