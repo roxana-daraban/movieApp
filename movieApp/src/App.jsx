@@ -1,6 +1,7 @@
 import { useState,useEffect, use } from 'react'
 import reactLogo from './assets/react.svg'
 import Search from './components/Search.jsx'
+import Spinner from './components/Spinner.jsx';
 
 
 const API_BASE_URL='https://api.themoviedb.org/3';
@@ -75,10 +76,10 @@ const fetchMovies=async()=>{
    </header>
 
       <section className="all-movies">
-        <h2>All movies</h2>
+        <h2 className="mt-[20px]">All movies</h2>
 
       {isLoading ? (
-        <p className="text-white">Loading...</p>
+        <Spinner/>
       ) : errorMessage ? (
         <p className="text-red-500">{errorMessage}</p>
       ):(
